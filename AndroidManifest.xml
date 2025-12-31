@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.RECEIVE_SMS"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission
+        android:name="android.permission.CAMERA"
+        tools:ignore="PermissionImpliesUnsupportedChromeOsHardware" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission
+        android:name="android.permission.INTERACT_ACROSS_PROFILES"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.myapplication.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUtil"
+            android:exported="false"/>
+        <activity
+            android:name=".WebActivity"
+            android:exported="false" />
+
+        <receiver
+            android:name=".MyReceiver1"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".MyService1"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MyService2"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity1020"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DBActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity1"
+            android:exported="false" />
+        <activity
+            android:name=".SaveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ServiceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity3"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity1"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

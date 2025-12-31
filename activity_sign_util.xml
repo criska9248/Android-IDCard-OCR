@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="腾讯云V3签名生成器"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"/>
+
+        <!-- 信息卡片 -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="签名信息"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_timestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="时间戳：等待生成..."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/tv_signature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="签名值：等待生成..."
+                    android:textSize="16sp"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="状态：就绪"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Authorization头显示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Authorization Header:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp"
+            android:layout_marginBottom="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tv_auth_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Authorization: "
+                    android:textSize="14sp"
+                    android:lineSpacingExtra="4dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- 按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/btn_generate"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="生成签名"
+                android:textSize="18sp"
+                android:layout_marginEnd="10dp"/>
+
+            <Button
+                android:id="@+id/btn_copy"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="复制结果"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <!-- 说明文本 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="说明：\n1. 点击'生成签名'创建腾讯云API请求的Authorization头\n2. 签名包含时间戳和加密信息\n3. 点击'复制结果'可将签名复制到剪贴板"
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:layout_marginTop="25dp"
+            android:padding="12dp"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+</ScrollView>
