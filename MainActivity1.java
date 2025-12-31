@@ -204,7 +204,7 @@ public class MainActivity1 extends AppCompatActivity {
                 capturedImage.compress(Bitmap.CompressFormat.JPEG, 95, stream);
                 byte[] imgData = stream.toByteArray();
 
-                // 2. Base64（你原来的工具类，不改）
+                // 2. Base64
                 String base64Img = Base64Util.encode(imgData);
 
                 // 3. 调用腾讯云官方 SDK
